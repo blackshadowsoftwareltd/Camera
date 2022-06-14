@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_print
 
+import 'dart:async';
 import 'dart:io';
 
 import 'package:camera/camera.dart';
@@ -21,10 +22,14 @@ class Home extends StatefulWidget {
   State<Home> createState() => _HomeState();
 }
 
+///????????!
 class _HomeState extends State<Home> {
   late CameraController _controller;
   late CameraDescription _cameraDirection;
   File? _file;
+
+  ///?
+  late StreamSubscription subscription;
   @override
   void initState() {
     super.initState();
