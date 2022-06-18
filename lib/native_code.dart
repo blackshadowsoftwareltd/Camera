@@ -1,16 +1,14 @@
 import 'dart:async';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
-const channel = MethodChannel('channel');
+const platform = MethodChannel('samples.flutter.dev/battery');
 
 Future<void> getBatteryLevel() async {
+  String batteryLevel;
   try {
-    final result = await channel.invokeMethod('getBatteryLevel');
-    debugPrint(result);
+    final int result = await platform.invokeMethod('getBatteryLevel');
+    batteryLevel = 'Battery level at $result % .';
   } on PlatformException catch (e) {
-    debugPrint('ERR: $e');
-  } catch (e) {
-    debugPrint('ERR: $e');
+    batteryLevel = "Failed to get battery level: '${e.message}'.";
   }
 }

@@ -4,6 +4,7 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:camera/camera.dart';
+import 'package:camera_test/native_code.dart';
 import 'package:flutter/material.dart';
 
 late List<CameraDescription> _cameras;
@@ -59,7 +60,7 @@ class _HomeState extends State<Home> {
         floatingActionButton: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            FloatingActionButton(onPressed: () {}),
+            FloatingActionButton(onPressed: () => getBatteryLevel()),
             FloatingActionButton(
                 child: const Icon(Icons.cameraswitch_outlined),
                 onPressed: () async {
