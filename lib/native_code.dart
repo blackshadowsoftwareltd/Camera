@@ -1,7 +1,9 @@
+// ignore_for_file: avoid_print
+
 import 'dart:async';
 import 'package:flutter/services.dart';
 
-const platform = MethodChannel('samples.flutter.dev/battery');
+const platform = MethodChannel('CHANNEL');
 
 Future<void> getBatteryLevel() async {
   String batteryLevel;
@@ -10,5 +12,17 @@ Future<void> getBatteryLevel() async {
     batteryLevel = 'Battery level at $result % .';
   } on PlatformException catch (e) {
     batteryLevel = "Failed to get battery level: '${e.message}'.";
+  }
+  print(batteryLevel);
+}
+
+Future<bool?> airplanMode() async {
+  try {
+    final bool resutl = await platform.invokeMethod('airplanMode');
+    print(resutl);
+    return resutl;
+  } on PlatformException catch (e) {
+    print('err: $e');
+    return null;
   }
 }
