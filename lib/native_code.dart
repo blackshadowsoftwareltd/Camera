@@ -19,7 +19,6 @@ Future<void> getBatteryLevel() async {
 Future<bool?> airplanMode() async {
   try {
     final bool resutl = await platform.invokeMethod('airplanMode');
-    print(resutl);
     return resutl;
   } on PlatformException catch (e) {
     print('err: $e');
