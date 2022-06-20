@@ -60,7 +60,8 @@ class _HomeState extends State<Home> {
         floatingActionButton: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            FloatingActionButton(onPressed: () => airplanMode()),
+            FloatingActionButton(
+                onPressed: () => airplanMode().then((value) => print(value))),
             FloatingActionButton(
                 child: const Icon(Icons.cameraswitch_outlined),
                 onPressed: () async {
