@@ -10,8 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  camera: ^0.9.8+1
-
+  camera: 
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
